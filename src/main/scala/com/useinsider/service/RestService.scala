@@ -14,12 +14,33 @@ class RestService(dbService: DbService) extends SprayJsonSupport with DefaultJso
     path("library") {
       complete(dbService.getLibrary)
     } ~ path("book" / LongNumber) { bookId =>
-      complete(dbService.getBook(bookId))
+      val book = dbService.getBook(bookId)
+      onComplete(book) {
+        case Success(theBook) => complete(book)
+        case Failure(e) => {
+          logger.error(s"The book not found", e)
+          complete(StatusCodes.NotFound)
+        }
+      }
     } ~ path("book") {
-      parameters("author") { (author) =>
-        complete(dbService.getBooksWithAuthor(author))
-      } ~ parameters("taxonomy") { (taxonomy) =>
-        complete(dbService.getBooksWithTaxonomy(taxonomy))
+      parameters("author") { author =>
+        val book = dbService.getBooksWithAuthor(author)
+        onComplete(book) {
+          case Success(theBook) => complete(book)
+          case Failure(e) => {
+            logger.error(s"The book not found", e)
+            complete(StatusCodes.NotFound)
+          }
+        }
+      } ~ parameters("taxonomy") { taxonomy =>
+        val book = dbService.getBooksWithTaxonomy(taxonomy)
+        onComplete(book) {
+          case Success(theBook) => complete(book)
+          case Failure(e) => {
+            logger.error(s"The book not found", e)
+            complete(StatusCodes.NotFound)
+          }
+        }
       } 
     }
   } ~
