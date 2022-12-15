@@ -18,10 +18,10 @@
         "classpath": [
             "/home/ssaaiidd/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-sbt/sbt/1.7.1/sbt-1.7.1.jar",
             "/home/ssaaiidd/.sbt/boot/scala-2.12.16/lib/scala-library.jar",
-            "/home/ssaaiidd/.cache/coursier/v1/https/repo1.maven.org/maven2/ch/epfl/scala/sbt-bloop_2.12_1.0/1.5.3-28-373a64c9/sbt-bloop-1.5.3-28-373a64c9.jar",
+            "/home/ssaaiidd/.cache/coursier/v1/https/repo1.maven.org/maven2/ch/epfl/scala/sbt-bloop_2.12_1.0/1.5.4-14-7cb43276/sbt-bloop-1.5.4-14-7cb43276.jar",
             "/home/ssaaiidd/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-sbt/main_2.12/1.7.1/main_2.12-1.7.1.jar",
             "/home/ssaaiidd/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-sbt/io_2.12/1.7.0/io_2.12-1.7.0.jar",
-            "/home/ssaaiidd/.cache/coursier/v1/https/repo1.maven.org/maven2/ch/epfl/scala/bloop-config_2.12/1.5.3-28-373a64c9/bloop-config_2.12-1.5.3-28-373a64c9.jar",
+            "/home/ssaaiidd/.cache/coursier/v1/https/repo1.maven.org/maven2/ch/epfl/scala/bloop-config_2.12/1.5.4-14-7cb43276/bloop-config_2.12-1.5.4-14-7cb43276.jar",
             "/home/ssaaiidd/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-sbt/logic_2.12/1.7.1/logic_2.12-1.7.1.jar",
             "/home/ssaaiidd/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-sbt/actions_2.12/1.7.1/actions_2.12-1.7.1.jar",
             "/home/ssaaiidd/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-sbt/main-settings_2.12/1.7.1/main-settings_2.12-1.7.1.jar",
@@ -198,7 +198,7 @@
         "platform": {
             "name": "jvm",
             "config": {
-                "home": "/usr/lib/jvm/java-17-openjdk-17.0.4.0.8-1.fc36.x86_64",
+                "home": "/usr/lib/jvm/java-17-openjdk-17.0.5.0.8-1.fc37.x86_64",
                 "options": [
                     "-Duser.dir=/home/ssaaiidd/Desktop/personal-repos/lib-master/project"
                 ]
@@ -212,34 +212,34 @@
                 {
                     "organization": "ch.epfl.scala",
                     "name": "sbt-bloop",
-                    "version": "1.5.3-28-373a64c9",
+                    "version": "1.5.4-14-7cb43276",
                     "configurations": "default",
                     "artifacts": [
                         {
                             "name": "sbt-bloop",
-                            "path": "/home/ssaaiidd/.cache/coursier/v1/https/repo1.maven.org/maven2/ch/epfl/scala/sbt-bloop_2.12_1.0/1.5.3-28-373a64c9/sbt-bloop-1.5.3-28-373a64c9.jar"
+                            "path": "/home/ssaaiidd/.cache/coursier/v1/https/repo1.maven.org/maven2/ch/epfl/scala/sbt-bloop_2.12_1.0/1.5.4-14-7cb43276/sbt-bloop-1.5.4-14-7cb43276.jar"
                         },
                         {
                             "name": "sbt-bloop",
                             "classifier": "sources",
-                            "path": "/home/ssaaiidd/.cache/coursier/v1/https/repo1.maven.org/maven2/ch/epfl/scala/sbt-bloop_2.12_1.0/1.5.3-28-373a64c9/sbt-bloop-1.5.3-28-373a64c9-sources.jar"
+                            "path": "/home/ssaaiidd/.cache/coursier/v1/https/repo1.maven.org/maven2/ch/epfl/scala/sbt-bloop_2.12_1.0/1.5.4-14-7cb43276/sbt-bloop-1.5.4-14-7cb43276-sources.jar"
                         }
                     ]
                 },
                 {
                     "organization": "ch.epfl.scala",
                     "name": "bloop-config_2.12",
-                    "version": "1.5.3-28-373a64c9",
+                    "version": "1.5.4-14-7cb43276",
                     "configurations": "default",
                     "artifacts": [
                         {
                             "name": "bloop-config_2.12",
-                            "path": "/home/ssaaiidd/.cache/coursier/v1/https/repo1.maven.org/maven2/ch/epfl/scala/bloop-config_2.12/1.5.3-28-373a64c9/bloop-config_2.12-1.5.3-28-373a64c9.jar"
+                            "path": "/home/ssaaiidd/.cache/coursier/v1/https/repo1.maven.org/maven2/ch/epfl/scala/bloop-config_2.12/1.5.4-14-7cb43276/bloop-config_2.12-1.5.4-14-7cb43276.jar"
                         },
                         {
                             "name": "bloop-config_2.12",
                             "classifier": "sources",
-                            "path": "/home/ssaaiidd/.cache/coursier/v1/https/repo1.maven.org/maven2/ch/epfl/scala/bloop-config_2.12/1.5.3-28-373a64c9/bloop-config_2.12-1.5.3-28-373a64c9-sources.jar"
+                            "path": "/home/ssaaiidd/.cache/coursier/v1/https/repo1.maven.org/maven2/ch/epfl/scala/bloop-config_2.12/1.5.4-14-7cb43276/bloop-config_2.12-1.5.4-14-7cb43276-sources.jar"
                         }
                     ]
                 },

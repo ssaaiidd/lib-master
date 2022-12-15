@@ -9,12 +9,13 @@ import com.typesafe.scalalogging.LazyLogging
 import spray.json._
 import scala.util.{Failure, Success}
 
-class RestService(dbService: DbService) extends SprayJsonSupport with DefaultJsonProtocol with LazyLogging {
+class RestService(libraryRepository: LibraryRepository) extends SprayJsonSupport with DefaultJsonProtocol with LazyLogging {
   val route: Route = get {
     path("library") {
-      complete(dbService.getLibrary)
+      complete(libraryRepository.getLibrary)
     } ~ path("book" / LongNumber) { bookId =>
-      val book = dbService.getBook(bookId)
+      val book = libraryRepository.getBook(bookId)
+
       onComplete(book) {
         case Success(theBook) => complete(book)
         case Failure(e) => {
@@ -24,7 +25,7 @@ class RestService(dbService: DbService) extends SprayJsonSupport with DefaultJso
       }
     } ~ path("book") {
       parameters("author") { author =>
-        val book = dbService.getBooksWithAuthor(author)
+        val book = libraryRepository.getBooksWithAuthor(author)
         onComplete(book) {
           case Success(theBook) => complete(book)
           case Failure(e) => {
@@ -33,7 +34,7 @@ class RestService(dbService: DbService) extends SprayJsonSupport with DefaultJso
           }
         }
       } ~ parameters("taxonomy") { taxonomy =>
-        val book = dbService.getBooksWithTaxonomy(taxonomy)
+        val book = libraryRepository.getBooksWithTaxonomy(taxonomy)
         onComplete(book) {
           case Success(theBook) => complete(book)
           case Failure(e) => {
@@ -47,7 +48,7 @@ class RestService(dbService: DbService) extends SprayJsonSupport with DefaultJso
     post {
       path("book") {
         entity(as[Book]) { book =>
-          val saved = dbService.addBook(book.title, book.author, book.taxonomy)
+          val saved = libraryRepository.addBook(book.title, book.author, book.taxonomy)
           onComplete(saved) {
             case Success(savedBook) => complete(savedBook)
             case Failure(e) => {
@@ -62,7 +63,7 @@ class RestService(dbService: DbService) extends SprayJsonSupport with DefaultJso
       path("book" / LongNumber) { id =>
         entity(as[Book]) { book =>
           val updated =
-            dbService.updateBook(id, book.title, book.author, book.taxonomy)
+            libraryRepository.updateBook(id, book.title, book.author, book.taxonomy)
           onComplete(updated) {
             case Success(updatedRows) =>
               complete(JsObject("updatedRows" -> JsNumber(updatedRows)))

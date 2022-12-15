@@ -3,7 +3,7 @@ package com.useinsider
 import akka.actor.ActorSystem
 import akka.http.scaladsl.Http
 import akka.stream.ActorMaterializer
-import com.useinsider.service.{DbService, RestService}
+import com.useinsider.service.{DbService, LibraryRepository, RestService}
 import com.typesafe.scalalogging.StrictLogging
 import slick.jdbc.PostgresProfile.api._
 
@@ -12,7 +12,7 @@ object Boot extends App with StrictLogging {
   private implicit val materializer = ActorMaterializer()
   private implicit val ec           = system.dispatcher
 
-  val db = Database.forConfig("herokuPostgresql")
+  val db = Database.forConfig("dockerPostgresql")
 
   val dbService   = new DbService(db)
   val restService = new RestService(dbService)
